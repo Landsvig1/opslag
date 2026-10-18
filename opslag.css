@@ -1,0 +1,46 @@
+/*
+ * Opslag's design tokens. Import after `@import "tailwindcss";`. Warm off-white paper,
+ * near-black ink, one forest-green accent, warm greys, low-saturation status hues, one wood
+ * hairline. A host can override any of the custom properties.
+ */
+:root {
+  --background: #f7f5f1;
+  --paper: #fdfcfa;
+  --ink: #1c1b1a;
+  --ink-muted: #5f5b55;
+  --ink-faint: #706b63;
+  --line: #e4dfd6;
+  --line-strong: #cfc8bc;
+  /* Resting border of a text field: 3:1 against paper and background (WCAG 1.4.11). */
+  --field: #8f877b;
+  --wood: #c8b89a;
+  --accent: #0e472f;
+  --accent-hover: #0b3825;
+  --accent-soft: #e6eee9;
+  --warn: #806016;
+  --bad: #9a3f3f;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-faint: var(--ink-faint);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-field: var(--field);
+  --color-wood: var(--wood);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-soft: var(--accent-soft);
+  --color-warn: var(--warn);
+  --color-bad: var(--bad);
+}
+
+/* Side sheet: 150 ms opacity and 8 px translate, nothing bounces. */
+@keyframes sheet-in {
+  from { opacity: 0; transform: translateX(8px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.sheet-in { animation: sheet-in 150ms ease-out both; }
